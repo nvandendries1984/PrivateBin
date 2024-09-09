@@ -189,7 +189,7 @@ endif;
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="reloadlink navbar-brand" href="">
+				<a class="reloadlink navbar-brand" href="" hidden>
 					<img alt="<?php echo I18n::_($NAME); ?>" src="img/icon.svg" width="38" />
 				</a>
 			</div>
@@ -200,7 +200,7 @@ endif;
 						<?php echo I18n::_('Loading…'), PHP_EOL; ?>
 					</li>
 					<li>
-						<button id="retrybutton" type="button" class="reloadlink hidden btn btn-<?php echo $isDark ? 'warning' : 'primary'; ?> navbar-btn">
+						<button id="retrybutton" type="button" class="reloadlink hidden btn btn-<?php echo $isDark ? 'danger' : 'primary'; ?> navbar-btn">
 							<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> <?php echo I18n::_('Retry'), PHP_EOL; ?>
 						</button>
 					</li>
@@ -208,36 +208,36 @@ endif;
 <?php
 if ($isPage) :
 ?>
-						<button id="sendbutton" type="button" class="hidden btn btn-<?php echo $isDark ? 'warning' : 'primary'; ?> navbar-btn">
+						<button id="sendbutton" type="button" class="hidden btn btn-<?php echo $isDark ? 'danger' : 'primary'; ?> navbar-btn">
 							<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <?php echo I18n::_('Create'), PHP_EOL;
 else :
 ?>
-						<button id="newbutton" type="button" class="hidden btn btn-<?php echo $isDark ? 'warning' : 'default'; ?> navbar-btn">
+						<button id="newbutton" type="button" class="hidden btn btn-<?php echo $isDark ? 'danger' : 'default'; ?> navbar-btn">
 							<span class="glyphicon glyphicon-file" aria-hidden="true"></span> <?php echo I18n::_('New'), PHP_EOL;
 endif;
 ?>
 						</button>
-						<button id="clonebutton" type="button" class="hidden btn btn-<?php echo $isDark ? 'warning' : 'default'; ?> navbar-btn">
+						<button id="clonebutton" type="button" class="hidden btn btn-<?php echo $isDark ? 'danger' : 'default'; ?> navbar-btn">
 							<span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span> <?php echo I18n::_('Clone'), PHP_EOL; ?>
 						</button>
-						<button id="rawtextbutton" type="button" class="hidden btn btn-<?php echo $isDark ? 'warning' : 'default'; ?> navbar-btn">
+						<button id="rawtextbutton" type="button" class="hidden btn btn-<?php echo $isDark ? 'danger' : 'default'; ?> navbar-btn">
 							<span class="glyphicon glyphicon-text-background" aria-hidden="true"></span> <?php echo I18n::_('Raw text'), PHP_EOL; ?>
 						</button>
-						<button id="downloadtextbutton" type="button" class="hidden btn btn-<?php echo $isDark ? 'warning' : 'default'; ?> navbar-btn">
+						<button id="downloadtextbutton" type="button" class="hidden btn btn-<?php echo $isDark ? 'danger' : 'default'; ?> navbar-btn">
 							<span class="glyphicon glyphicon glyphicon-download-alt" aria-hidden="true"></span> <?php echo I18n::_('Save paste'), PHP_EOL; ?>
 						</button>
 <?php
 if ($EMAIL) :
 ?>
 
-						<button id="emaillink" type="button" class="hidden btn btn-<?php echo $isDark ? 'warning' : 'default'; ?> navbar-btn">
+						<button id="emaillink" type="button" class="hidden btn btn-<?php echo $isDark ? 'danger' : 'default'; ?> navbar-btn">
 							<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <?php echo I18n::_('Email'), PHP_EOL; ?>
 						</button>
 <?php
 endif;
 if ($QRCODE) :
 ?>
-						<button id="qrcodelink" type="button" data-toggle="modal" data-target="#qrcodemodal" class="hidden btn btn-<?php echo $isDark ? 'warning' : 'default'; ?> navbar-btn">
+						<button id="qrcodelink" type="button" data-toggle="modal" data-target="#qrcodemodal" class="hidden btn btn-<?php echo $isDark ? 'danger' : 'default'; ?> navbar-btn">
 							<span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span> <?php echo I18n::_('QR code'), PHP_EOL; ?>
 						</button>
 <?php
@@ -499,7 +499,7 @@ endif;
 					<?php echo I18n::encode($ERROR), PHP_EOL; ?>
 				</div>
 				<noscript>
-					<div id="noscript" role="alert" class="alert alert-<?php echo $isDark ? 'error' : 'warning'; ?>">
+					<div id="noscript" role="alert" class="alert alert-<?php echo $isDark ? 'error' : 'danger'; ?>">
 						<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 						<?php echo I18n::_('JavaScript is required for %s to work. Sorry for the inconvenience.', I18n::_($NAME)), PHP_EOL; ?>
 					</div>
@@ -513,7 +513,7 @@ endif;
 					<span class="small"><?php echo I18n::_('For more information <a href="%s">see this FAQ entry</a>.', 'https://github.com/PrivateBin/PrivateBin/wiki/FAQ#why-does-it-show-me-the-error-privatebin-requires-a-modern-browser-to-work'); ?></span>
 				</div>
 <?php
-if ($HTTPWARNING) :
+if ($HTTPdanger) :
 ?>
 				<div id="httpnotice" role="alert" class="hidden alert alert-danger">
 					<span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
@@ -537,7 +537,7 @@ endif;
 if (!empty($URLSHORTENER)) :
 ?>
 					<p>
-						<button id="shortenbutton" data-shortener="<?php echo I18n::encode($URLSHORTENER); ?>" type="button" class="btn btn-<?php echo $isDark ? 'warning' : 'primary'; ?> btn-block">
+						<button id="shortenbutton" data-shortener="<?php echo I18n::encode($URLSHORTENER); ?>" type="button" class="btn btn-<?php echo $isDark ? 'danger' : 'primary'; ?> btn-block">
 						<span class="glyphicon glyphicon-send" aria-hidden="true"></span> <?php echo I18n::_('Shorten URL'), PHP_EOL; ?>
 					</button>
 					</p>
@@ -556,11 +556,11 @@ endif;
 <?php
 if ($isPage) :
 ?>
-						<button id="newbutton" type="button" class="reloadlink hidden btn btn-<?php echo $isDark ? 'warning' : 'default'; ?>">
+						<button id="newbutton" type="button" class="reloadlink hidden btn btn-<?php echo $isDark ? 'danger' : 'default'; ?>">
 							<span class="glyphicon glyphicon-file" aria-hidden="true"></span> <?php echo I18n::_('New'), PHP_EOL;
 else :
 ?>
-						<button id="sendbutton" type="button" class="hidden btn btn-<?php echo $isDark ? 'warning' : 'primary'; ?>">
+						<button id="sendbutton" type="button" class="hidden btn btn-<?php echo $isDark ? 'danger' : 'primary'; ?>">
 							<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <?php echo I18n::_('Create'), PHP_EOL;
 endif;
 ?>
@@ -592,7 +592,7 @@ endif;
 					<span class="small"><?php echo I18n::_('In case this message never disappears please have a look at <a href="%s">this FAQ for information to troubleshoot</a>.', 'https://github.com/PrivateBin/PrivateBin/wiki/FAQ#why-does-the-loading-message-not-go-away'); ?></span>
 				</div>
 			</section>
-			<footer class="container">
+			<footer class="container" hidden>
 				<div class="row">
 					<h4 class="col-md-5 col-xs-8"><?php echo I18n::_($NAME); ?> <small>- <?php echo I18n::_('Because ignorance is bliss'); ?></small></h4>
 					<p class="col-md-1 col-xs-4 text-center"><?php echo $VERSION; ?></p>
