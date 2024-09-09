@@ -37,7 +37,7 @@ burnafterreadingselected = false
 defaultformatter = "plaintext"
 
 ; (optional) set a syntax highlighting theme, as found in css/prettify/
-; syntaxhighlightingtheme = "sons-of-obsidian"
+syntaxhighlightingtheme = "sons-of-obsidian"
 
 ; size limit per paste or comment in bytes, defaults to 10 Mebibytes
 sizelimit = 10485760
@@ -127,7 +127,7 @@ email = true
 [expire]
 ; expire value that is selected per default
 ; make sure the value exists in [expire_options]
-default = "1week"
+default = "never"
 
 [expire_options]
 ; Set each one of these to the number of seconds in the expiration period,
